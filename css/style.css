@@ -259,12 +259,13 @@ img {
 ============================================== 
 */
 .hero {
-    height: 100vh;
-    min-height: 700px;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
-    padding-top: 80px;
+    padding-top: 120px;
+    /* Increased to account for navbar */
+    padding-bottom: 60px;
 }
 
 .hero-content {
@@ -292,10 +293,12 @@ img {
 /* Wavy Blob Animation */
 .blob-image-wrapper {
     position: relative;
-    width: 350px;
-    height: 350px;
+    width: 100%;
+    max-width: 350px;
+    aspect-ratio: 1 / 1;
     overflow: hidden;
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    margin: 0 auto;
     animation: blob-bounce 8s ease-in-out infinite;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     border: 3px solid rgba(56, 189, 248, 0.3);
@@ -978,8 +981,7 @@ img {
     }
 
     .blob-image-wrapper {
-        width: 280px;
-        height: 280px;
+        max-width: 280px;
     }
 
     .hero-title {
@@ -1043,5 +1045,43 @@ img {
 
     .objective-container p {
         font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .blob-image-wrapper {
+        max-width: 220px;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 10px 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
     }
 }
